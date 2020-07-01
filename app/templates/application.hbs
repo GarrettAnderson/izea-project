@@ -2,9 +2,22 @@
 
 <ul>
 {{#each @model as |post|}}
-  <h3>{{post.title}}</h3>
+  <button {{action (action "toggleModal")}}>{{post.title}}</button>
+  <br>
+    {{#if isShowingModal}}
+      {{#modal-dialog
+          onClose=(action "toggleModal")
+          targetAttachment="center"
+          translucentOverlay=true
+          containerClassNames="modal-wrapper"
+      }}
+        {{post.body}}
+         <button onclick={{action "toggleModal"}}>Close</button>
+      {{/modal-dialog}}
+    {{/if}}
 {{/each}}
 </ul>
+
 
 
 
