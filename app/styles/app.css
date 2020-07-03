@@ -37,3 +37,51 @@ button {
 body {
   background: #f3f3f3;
 }
+
+.post-container {
+  text-align: center;
+  height: 100vh;
+}
+
+.post-list {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: center;
+  margin: 0 auto;
+  width: 65vw;
+  padding: 1rem 4rem;
+  border: 1px solid black;
+}
+
+.post-list button {
+  background: transparent;
+  border: none;
+  padding: 1rem 2rem;
+}
+
+.post-list li {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  width: 65.2vw;
+  justify-content: center;
+}
+
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-wrapper h3 {
+  text-align: center;
+}
+
+.modal-wrapper button {
+  width: 100%;
+}

@@ -1,23 +1,31 @@
-<h1>Posts</h1>
+<main class="post-container">
+  <h1>Posts</h1>
 
-<ul>
-{{#each @model as |post|}}
-  <button {{action (action "toggleModal")}}>{{post.title}}</button>
-  <br>
-    {{#if isShowingModal}}
-      {{#modal-dialog
-          onClose=(action "toggleModal")
-          targetAttachment="center"
-          translucentOverlay=true
-          containerClassNames="modal-wrapper"
-      }}
-        {{post.body}}
-         <button onclick={{action "toggleModal"}}>Close</button>
-      {{/modal-dialog}}
-    {{/if}}
-{{/each}}
-</ul>
-
+  <ul class="post-list">
+  {{#each @model as |post|}}
+    <li>
+      <button {{action (action "toggleModal")}}>{{post.title}}</button>
+    </li>
+      {{#if isShowingModal}}
+        {{#modal-dialog
+            onClose=(action "toggleModal")
+            targetAttachment="center"
+            translucentOverlay=true
+            containerClassNames="modal-wrapper"
+        }}
+        <article>
+          <h3>Post Details</h3>
+            <p>
+              {{post.body}}
+            </p>
+          <button onclick={{action "toggleModal"}}>Close</button>
+        </article>
+        {{/modal-dialog}}
+      {{/if}}
+  {{/each}}
+  {{page-numbers content=pagedContent}}
+  </ul>
+</main>
 
 
 
