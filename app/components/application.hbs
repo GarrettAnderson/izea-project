@@ -1,7 +1,6 @@
-<h1>POSTS</h1>
-{{outlet}}
+{{yield}}
 <main class="post-container">
-  <h1>Posts</h1>
+  <h1>{{@title}}</h1>
 
   <ul class="post-list">
   {{#each @model as |post|}}
@@ -27,4 +26,4 @@
   {{/each}}
   {{page-numbers content=pagedContent}}
   </ul>
-</main> 
+</main>

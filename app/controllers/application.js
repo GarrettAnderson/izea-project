@@ -7,15 +7,16 @@ export default Ember.Controller.extend({
     toggleModal: function() {
       this.toggleProperty("isShowingModal");
     }
-  },
-  queryParams: ["page", "perPage"],
-  page: 1,
-  perPage: 10,
+  }
 
-  pagedContent: pagedArray("content", {
-    page: Ember.computed.alias("parent.page"),
-    perPage: Ember.computed.alias("parent.perPage")
-  }),
+  //   queryParams: ["page", "perPage"],
+  //   page: 1,
+  //   perPage: 10,
 
-  totalPages: Ember.computed.oneWay("pagedContent.totalPages")
+  //   pagedContent: pagedArray("content", {
+  //     page: Ember.computed.alias("parent.page"),
+  //     perPage: Ember.computed.alias("parent.perPage")
+  //   }),
+
+  //   totalPages: Ember.computed.oneWay("pagedContent.totalPages")
 });
