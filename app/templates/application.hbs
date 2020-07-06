@@ -1,5 +1,3 @@
-{{!-- <Posts @title="Posts" @posts={{@model}} /> --}}
-
 <main class="post-container">
   <h1>Posts</h1>
 
@@ -7,6 +5,7 @@
   {{#each @model as |post|}}
     <li>
       <button {{action (action "toggleModal")}}>{{post.title}}</button>
+      <p>By: {{post.userId.name}}</p>
     </li>
       {{#if isShowingModal}}
         {{#modal-dialog
@@ -20,8 +19,8 @@
             <p>
               {{post.body}}
             </p>
-            {{!-- <h3>User Details</h3>
-            {{post.userId.name}} --}}
+            <h3>User Details</h3>
+            <p>Name: {{post.userId.name}}</p>
           <button onclick={{action "toggleModal"}}>Close</button>
         </article>
         {{/modal-dialog}}

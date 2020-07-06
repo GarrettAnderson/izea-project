@@ -3,8 +3,10 @@ import Ember from "ember";
 // // import { action } from "@ember/object";
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.findAll("post");
+  //  model() {
+  // return this.store.findAll("post");
+  model(params) {
+    return this.store.query("post", { userId: params.userId });
   }
 });
 //   queryParams = {

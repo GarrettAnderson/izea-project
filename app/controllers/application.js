@@ -1,4 +1,6 @@
 import Ember from "ember";
+import { tracked } from "@glimmer/tracking";
+import { alias, oneWay } from "@ember/object/computed";
 import pagedArray from "ember-cli-pagination/computed/paged-array";
 
 export default Ember.Controller.extend({
@@ -7,16 +9,15 @@ export default Ember.Controller.extend({
     toggleModal: function() {
       this.toggleProperty("isShowingModal");
     }
-  }
+  },
+  queryParams: ["page", "perPage"],
+  page: 1,
+  perPage: 10,
 
-  //   queryParams: ["page", "perPage"],
-  //   page: 1,
-  //   perPage: 10,
+  pagedContent: pagedArray("content", {
+    page: Ember.computed.alias("parent.page"),
+    perPage: Ember.computed.alias("parent.perPage")
+  }),
 
-  //   pagedContent: pagedArray("content", {
-  //     page: Ember.computed.alias("parent.page"),
-  //     perPage: Ember.computed.alias("parent.perPage")
-  //   }),
-
-  //   totalPages: Ember.computed.oneWay("pagedContent.totalPages")
+  totalPages: Ember.computed.oneWay("pagedContent.totalPages")
 });
