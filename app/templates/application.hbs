@@ -26,7 +26,10 @@
         {{/modal-dialog}}
       {{/if}}
   {{/each}}
-  {{page-numbers content=pagedContent}}
+  {{!-- {{page-numbers content=pagedContent}} --}}
+  <button {{action 'nextPage'}}>Next</button>
+Current Page:{{page}}
+<button {{action 'previousPage'}}>Previous</button>
   </ul>
 </main> 
 

@@ -2,15 +2,34 @@ import Ember from "ember";
 // // import { action } from "@ember/object";
 
 export default Ember.Route.extend({
-  model(params) {
+  queryParams: {
+    page: {
+      refreshModel: true
+    },
+    limit: {
+      refreshModel: true
+    }
+  },
+
+  model: function(params) {
     return this.store.query("post", {
-      page: {
-        number: params.page,
-        size: params.size
-      }
+      _page: params.page,
+      _limit: params.limit
     });
   }
 });
+
+// export default Ember.Route.extend({
+//   model(params) {
+//     return this.store.query("post", {
+//       page: {
+//         number: params.page,
+//         size: params.size
+//       }
+//     });
+//   }
+// });
+
 // import Route from "@ember/routing/route";
 // import fetch from "fetch";
 // import RouteMixin from "ember-cli-pagination/remote/route-mixin";
