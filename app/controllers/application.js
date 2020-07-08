@@ -14,11 +14,25 @@ export default Ember.Controller.extend({
   page: 1,
   limit: 10,
   actions: {
+    firstPage: function() {
+      this.set("page", 1);
+    },
     nextPage: function() {
-      this.set("page", this.get("page") + 1);
+      if (this.get("page") >= 10) {
+        this.set("page", 1);
+      } else {
+        this.set("page", this.get("page") + 1);
+      }
     },
     previousPage: function() {
-      this.set("page", this.get("page") - 1);
+      if (this.get("page") > 1) {
+        this.set("page", this.get("page") - 1);
+      } else {
+        this.set("page", 10);
+      }
+    },
+    lastPage: function() {
+      this.set("page", 10);
     },
     toggleModal: function() {
       this.toggleProperty("isShowingModal");
@@ -33,6 +47,5 @@ export default Ember.Controller.extend({
     page: Ember.computed.alias("parent.page"),
     perPage: Ember.computed.alias("parent.perPage")
   }),
-
   totalPages: Ember.computed.oneWay("pagedContent.totalPages")
 });

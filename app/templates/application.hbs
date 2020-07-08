@@ -27,9 +27,25 @@
       {{/if}}
   {{/each}}
   {{!-- {{page-numbers content=pagedContent}} --}}
-  <button {{action 'nextPage'}}>Next</button>
-Current Page:{{page}}
-<button {{action 'previousPage'}}>Previous</button>
+  
+  <ul>
+    <li>
+    <button {{action 'firstPage'}}>First Page</button>
+    </li>
+    <li>
+    <button {{action 'nextPage'}}>Next</button>
+    </li>
+  <li>
+    Current Page:{{page}}
+  </li>
+  <li>
+    <button {{action 'previousPage'}}>Previous</button>
+  </li>
+  <li>
+    <button {{action 'lastPage'}}>Last Page</button>
+  </li>
+  </ul>
+
   </ul>
 </main> 
 

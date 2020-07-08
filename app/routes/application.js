@@ -17,6 +17,12 @@ export default Ember.Route.extend({
       _limit: params.limit
     });
   }
+
+  // afterModel: function(model) {
+  //   if (isEmpty(model)) {
+  //     this.transitionTo({ queryParams: {page: 1}})
+  //   })
+  // }
 });
 
 // export default Ember.Route.extend({
