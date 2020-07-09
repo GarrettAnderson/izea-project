@@ -59,6 +59,8 @@ body {
   background: transparent;
   border: none;
   padding: 1rem 2rem;
+  height: 100%;
+  width: 100%;
 }
 
 .post-list li {
@@ -66,12 +68,12 @@ body {
   width: 100%;
 }
 
-.pagination {
+/* .pagination {
   list-style: none;
   display: flex;
   width: 65.2vw;
   justify-content: center;
-}
+} */
 
 .modal-wrapper {
   display: flex;
@@ -84,4 +86,33 @@ body {
 
 .modal-wrapper button {
   width: 100%;
+}
+
+.modal-wrapper h3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.user-detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-detail-list span {
+  font-weight: bold;
+}
+
+.pagination-ctrl {
+  list-style: none;
+  display: flex;
+  width: 65.2vw;
+}
+
+.pagination-ctrl li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

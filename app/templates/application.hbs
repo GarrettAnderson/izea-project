@@ -20,7 +20,20 @@
               {{post.body}}
             </p>
             <h3>User Details</h3>
-            <p>Name: {{post.userId.name}}</p>
+              <ul class="user-detail-list">
+                <li>
+                 <p><span>Name:</span> {{post.userId.name}}</p>
+                </li>
+                <li>
+                 <p><span>Email:</span> {{post.userId.email}}</p>
+                </li>
+                <li>
+                 <p><span>Phone:</span> {{post.userId.phone}}</p>
+                </li>
+                <li>
+                 <p><span>Website:</span> {{post.userId.website}}</p>
+                </li>
+              </ul>
           <button onclick={{action "toggleModal"}}>Close</button>
         </article>
         {{/modal-dialog}}
@@ -28,18 +41,18 @@
   {{/each}}
   {{!-- {{page-numbers content=pagedContent}} --}}
   
-  <ul>
+  <ul class="pagination-ctrl">
     <li>
     <button {{action 'firstPage'}}>First Page</button>
     </li>
     <li>
-    <button {{action 'nextPage'}}>Next</button>
+    <button {{action 'previousPage'}}>Previous</button>
     </li>
   <li>
-    Current Page:{{page}}
+    {{page}}
   </li>
   <li>
-    <button {{action 'previousPage'}}>Previous</button>
+    <button {{action 'nextPage'}}>Next</button>
   </li>
   <li>
     <button {{action 'lastPage'}}>Last Page</button>
