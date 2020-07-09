@@ -6,7 +6,6 @@
     <li>
       <button {{action (action "toggleModal")}}>{{post.title}}</button>
       {{!-- <p>By: {{post.userId.name}}</p> --}}
-    </li>
       {{#if isShowingModal}}
         {{#modal-dialog
             onClose=(action "toggleModal")
@@ -42,6 +41,7 @@
           <button onclick={{action "toggleModal"}}>Close</button>
         {{/modal-dialog}}
       {{/if}}
+    </li>
   {{/each}}
   {{!-- {{page-numbers content=pagedContent}} --}}
   
