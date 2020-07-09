@@ -5,7 +5,7 @@
   {{#each @model as |post|}}
     <li>
       <button {{action (action "toggleModal")}}>{{post.title}}</button>
-      <p>By: {{post.userId.name}}</p>
+      {{!-- <p>By: {{post.userId.name}}</p> --}}
     </li>
       {{#if isShowingModal}}
         {{#modal-dialog
@@ -15,10 +15,13 @@
             containerClassNames="modal-wrapper"
         }}
         <article>
+          <div>
           <h3>Post Details</h3>
             <p>
               {{post.body}}
             </p>
+          </div>
+          <div>
             <h3>User Details</h3>
               <ul class="user-detail-list">
                 <li>
@@ -34,8 +37,9 @@
                  <p><span>Website:</span> {{post.userId.website}}</p>
                 </li>
               </ul>
-          <button onclick={{action "toggleModal"}}>Close</button>
+          </div>
         </article>
+          <button onclick={{action "toggleModal"}}>Close</button>
         {{/modal-dialog}}
       {{/if}}
   {{/each}}
@@ -46,7 +50,7 @@
     <button {{action 'firstPage'}}>First Page</button>
     </li>
     <li>
-    <button {{action 'previousPage'}}>Previous</button>
+    <button {{action 'previousPage'}}>Prev</button>
     </li>
   <li>
     {{page}}
