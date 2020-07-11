@@ -69,13 +69,6 @@ body {
   width: 100%;
 }
 
-/* .pagination {
-  list-style: none;
-  display: flex;
-  width: 65.2vw;
-  justify-content: center;
-} */
-
 .ember-modal-overlay.translucent {
   background-color: rgba(128, 128, 128, 1);
 }

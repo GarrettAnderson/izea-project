@@ -1,15 +1,15 @@
-import { module, test } from 'qunit'
-import { click, visit, currentURL } from '@ember/test-helpers'
-import { setupApplicationTest } from 'ember-qunit'
+import { module, test } from "qunit";
+import { click, visit, currentURL } from "@ember/test-helpers";
+import { setupApplicationTest } from "ember-qunit";
 
-module('Acceptance | posts', function(hooks) {
-  setupApplicationTest(hooks)
+module("Acceptance | posts", function(hooks) {
+  setupApplicationTest(hooks);
 
-  test('visiting /', async function(assert) {
-    await visit('/')
+  test("visiting /", async function(assert) {
+    await visit("/");
 
-    assert.equal(currentURL(), '/')
+    assert.equal(currentURL(), "/");
 
-    assert.dom('h1').hasText('Posts')
-  })
-})
+    assert.dom("h1").hasText("Posts");
+  });
+});
